@@ -9,14 +9,19 @@ const syncUserCreation = inngest.createFunction(
     {id: 'sync-user-form-clerk'},
     {event: 'clerk/user.created'},
     async ({event}) => {
-        const {id, first_name, last_name, email_address, image_url,} = event.data
+        const {id, first_name, last_name, email_addresses, image_url,} = event.data
         const userData = {
             _id: id,
-            email: email_address[0].email_address || '',
+            email: email_addresses?.[0]?.email_address || '',
             name: first_name + ' ' + last_name,
             image: image_url
         }
-        await User.create(userData)
+        try {
+      await User.create(userData);
+    } catch (err) {
+      console.error("Error creating user:", err);
+      throw err;
+    }
     }
 )
 
@@ -27,7 +32,12 @@ const syncUserDeletion = inngest.createFunction(
     async ({event}) => {
 
         const {id} = event.data
-        await User.findByIdAndDelete(id)
+        try {
+      await User.findByIdAndDelete(id);
+    } catch (err) {
+      console.error("Error deleting user:", err);
+      throw err;
+    }
     }
 )
 
@@ -36,14 +46,19 @@ const syncUserUpdation = inngest.createFunction(
     {id: 'update-user-form-clerk'},
     {event: 'clerk/user.updated'},
     async ({event}) => {
-        const {id, first_name, last_name, email_address, image_url,} = event
+        const {id, first_name, last_name, email_addresses, image_url,} = event.data
         const userData = {
             _id: id,
-            email: email_address[0].email_address || '',
+            email: email_addresses?.[0]?.email_address || '',
             name: first_name + ' ' + last_name,
             image: image_url
         }
-        await User.findByIdAndUpdate(id, userData )
+        try {
+      await User.findByIdAndUpdate(id, userData);
+    } catch (err) {
+      console.error("Error updating user:", err);
+      throw err;
+    }
     }
 )
 
