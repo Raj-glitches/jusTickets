@@ -1,5 +1,6 @@
 import logo from './logo.svg'
 import marvelLogo from './marvelLogo.svg'
+import movielogo from './movielogo.webp'
 import googlePlay from './googlePlay.svg'
 import appStore from './appStore.svg'
 import screenImage from './screenImage.svg'
@@ -8,6 +9,7 @@ import profile from './profile.png'
 export const assets = {
     logo,
     marvelLogo,
+    movielogo,
     googlePlay,
     appStore,
     screenImage,
@@ -16,20 +18,20 @@ export const assets = {
 
 export const dummyTrailers = [
     {
-        image: "https://img.youtube.com/vi/WpW36ldAqnM/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=WpW36ldAqnM'
+        image: "https://img.youtube.com/vi/8FkLRUJj-o0/maxresdefault.jpg",
+        videoUrl: 'https://www.youtube.com/watch?v=8FkLRUJj-o0'
     },
     {
-        image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=-sAOWhvheK8'
+        image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ9RAzGqpHpGOa0lq6nhML7QwFhRhB1HpI0A1_S2t3AXcGJhkjC-Sd8D4WuG7HiuQsGwJLntg",
+        videoUrl: 'https://www.youtube.com/watch?v=aozErj9NqeE&t=30s'
     },
     {
-        image: "https://img.youtube.com/vi/1pHDWnXmK7Y/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=1pHDWnXmK7Y'
+        image: "https://img.youtube.com/vi/F_vjr1BotPQ/maxresdefault.jpg",
+        videoUrl: 'https://www.youtube.com/watch?v=F_vjr1BotPQ'
     },
     {
-        image: "https://img.youtube.com/vi/umiKiW4En9g/maxresdefault.jpg",
-        videoUrl: 'https://www.youtube.com/watch?v=umiKiW4En9g'
+        image: "https://img.youtube.com/vi/ggJg6CcKtZE/maxresdefault.jpg",
+        videoUrl: 'https://www.youtube.com/watch?v=ggJg6CcKtZE'
     },
 ]
 
